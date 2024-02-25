@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+	"http://struts.apache.org/dtds/struts-2.5.dtd">
+
+<struts>
+	<package namespace="/" name="Major2" extends="json-default">
+	
+		
+		<action name="readAllOrders"
+			class="com.highradius.action.OrdersAction" method="readAllOrders">
+
+			<result name="success" type="json">
+				<param name="excludeNullProperties">true</param>
+			</result>
+			<result name="error" type="json">
+				<param name="excludeNullProperties">true</param>
+			</result>
+
+		</action>
+		
+
+		<action name="readOrdersById"
+			class="com.highradius.action.OrdersAction" method="readOrdersById">
+			<interceptor-ref name="json">
+				<param name="enableSMD">true</param>
+			</interceptor-ref>
+			
+			<result name="success" type="json">
+				<param name="excludeNullProperties">true</param>
+			</result>
+			<result name="error" type="json">
+				<param name="excludeNullProperties">true</param>
+			</result>
+
+		</action>
+		
+		<action name="readOrdersByCustomerId"
+			class="com.highradius.action.OrdersAction" method="readOrdersByCustomerId">
+			<interceptor-ref name="json">
+				<param name="enableSMD">true</param>
+			</interceptor-ref>
+			
+			<result name="success" type="json">
+				<param name="excludeNullProperties">true</param>
+			</result>
+			<result name="error" type="json">
+				<param name="excludeNullProperties">true</param>
+			</result>
+
+		</action>
+		
+		<action name="readOrdersByEmployeeId"
+			class="com.highradius.action.OrdersAction" method="readOrdersByEmployeeId">
+			<interceptor-ref name="json">
+				<param name="enableSMD">true</param>
+			</interceptor-ref>
+			
+			<result name="success" type="json">
+				<param name="excludeNullProperties">true</param>
+			</result>
+			<result name="error" type="json">
+				<param name="excludeNullProperties">true</param>
+			</result>
+
+		</action>
+		
+				
+		<action name="insertSingleOrder" class="com.highradius.action.OrdersAction"
+			method="insertSingleOrder">
+			
+			<interceptor-ref name="json">
+				<param name="enableSMD">true</param>
+			</interceptor-ref>
+			
+			<result name="ADDED" type="json">
+			</result>
+			<result name="ALREADY_PRESENT" type="json">
+			</result>
+		</action>
+
+		<action name="deleteOrderById" class="com.highradius.action.OrdersAction"
+			method="deleteOrderById">
+			
+			<interceptor-ref name="json">
+				<param name="enableSMD">true</param>
+			</interceptor-ref>
+			
+			<result name="DELETED" type="json">
+			</result>
+			<result name="ALREADY_DELETED" type="json">
+			</result>
+		</action>
+		
+		
+		<action name="updateOrderById" class="com.highradius.action.OrdersAction"
+			method="updateOrderById">
+			
+			<interceptor-ref name="json">
+				<param name="enableSMD">true</param>
+			</interceptor-ref>
+			
+			<result name="error" type="json">
+			</result>
+			<result name="success" type="json">
+			</result>
+		</action>
+		
+		
+	
+		
+
+	</package>
+</struts>

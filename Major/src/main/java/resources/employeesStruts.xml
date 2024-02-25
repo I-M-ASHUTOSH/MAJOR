@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+	"http://struts.apache.org/dtds/struts-2.5.dtd">
+
+<struts>
+	<package namespace="/" name="Major1" extends="json-default">
+	
+		
+		<action name="readAllEmployees"
+			class="com.highradius.action.EmployeesAction" method="readAllEmployees">
+
+			<result name="success" type="json">
+				<param name="excludeNullProperties">true</param>
+			</result>
+			<result name="error" type="json">
+				<param name="excludeNullProperties">true</param>
+			</result>
+
+		</action>
+		
+
+		<action name="readEmployeesById"
+			class="com.highradius.action.EmployeesAction" method="readEmployeesById">
+			<interceptor-ref name="json">
+				<param name="enableSMD">true</param>
+			</interceptor-ref>
+			
+			<result name="success" type="json">
+				<param name="excludeNullProperties">true</param>
+			</result>
+			<result name="error" type="json">
+				<param name="excludeNullProperties">true</param>
+			</result>
+
+		</action>
+		
+		<action name="deleteEmployeesById"
+			class="com.highradius.action.EmployeesAction" method="deleteEmployeesById">
+			<interceptor-ref name="json">
+				<param name="enableSMD">true</param>
+			</interceptor-ref>
+			
+			<result name="success" type="json">
+				<param name="excludeNullProperties">true</param>
+			</result>
+			<result name="error" type="json">
+				<param name="excludeNullProperties">true</param>
+			</result>
+
+		</action>
+
+		
+		<action name="insertSingleEmployee" class="com.highradius.action.EmployeesAction"
+			method="insertSingleEmployee">
+			
+			<interceptor-ref name="json">
+				<param name="enableSMD">true</param>
+			</interceptor-ref>
+			
+			<result name="ADDED" type="json">
+			</result>
+			<result name="ALREADY_PRESENT" type="json">
+			</result>
+		</action>
+
+		
+		
+		<action name="insertMultipleEmployees" class="com.highradius.action.EmployeesAction"
+			method="insertMultipleEmployees">
+			
+			<interceptor-ref name="json">
+				<param name="enableSMD">true</param>
+			</interceptor-ref>
+			
+			<result name="ADDED" type="json">
+			</result>
+			<result name="ALREADY_PRESENT" type="json">
+			</result>
+		</action>
+		
+		
+		<action name="updateEmployeesById" class="com.highradius.action.EmployeesAction"
+			method="updateEmployeesById">
+			
+			<interceptor-ref name="json">
+				<param name="enableSMD">true</param>
+			</interceptor-ref>
+			
+			<result name="success" type="json">
+			</result>
+			<result name="error" type="json">
+			</result>
+		</action>
+		
+
+	</package>
+</struts>

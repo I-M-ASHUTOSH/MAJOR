@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="EmployeesDaoImpl"
+		class="com.highradius.daoimpl.EmployeesDaoImpl">
+	</bean>
+	<bean id="CustomersDaoImpl"
+		class="com.highradius.daoimpl.CustomersDaoImpl">
+	</bean>
+
+
+	<bean id="EmployeeManagerDaoImpl"
+		class="com.highradius.managerImpl.ManagerImplEmployees">
+		<property name="employeedao" ref="EmployeesDaoImpl"></property>
+	</bean>
+
+	<bean id="CustomerManagerDaoImpl"
+		class="com.highradius.managerImpl.ManagerImplCustomers">
+		<property name="customerdao" ref="CustomersDaoImpl"></property>
+	</bean>
+
+	<bean id="ordersDao"
+		class="com.highradius.daoimpl.OrdersDaoImpl">
+	</bean>
+	
+	<bean id="ordersManager"
+		class="com.highradius.managerImpl.ManagerImplOrders">
+		<property name="ordersDao" ref="ordersDao"></property>
+	</bean>
+
+
+
+</beans>
+        

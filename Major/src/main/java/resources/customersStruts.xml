@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+	"http://struts.apache.org/dtds/struts-2.5.dtd">
+
+<struts>
+	<package namespace="/" name="Major" extends="json-default">
+	
+		
+		<action name="readAllCustomers"
+			class="com.highradius.action.CustomersAction" method="readAllCustomers">
+
+			<result name="success" type="json">
+				<param name="excludeNullProperties">true</param>
+			</result>
+			<result name="error" type="json">
+				<param name="excludeNullProperties">true</param>
+			</result>
+
+		</action>
+		
+		<action name="readCustomersById"
+			class="com.highradius.action.CustomersAction" method="readCustomersById">
+   				
+			<interceptor-ref name="json">
+				<param name="enableSMD">true</param>
+			</interceptor-ref>
+			<result name="success" type="json">
+				<param name="excludeNullProperties">false</param>
+			</result>
+			<result name="error" type="json">
+				<param name="excludeNullProperties">false</param>
+			</result>
+
+		</action>
+		
+		<action name="readCustomersByCountry"
+			class="com.highradius.action.CustomersAction" method="readCustomersByCountry">
+   				
+			<interceptor-ref name="json">
+				<param name="enableSMD">true</param>
+			</interceptor-ref>
+			<result name="success" type="json">
+				<param name="excludeNullProperties">true</param>
+			</result>
+			<result name="error" type="json">
+				<param name="excludeNullProperties">true</param>
+			</result>
+
+		</action>
+				
+		<action name="deleteCustomersById"
+			class="com.highradius.action.CustomersAction" method="deleteCustomersById">
+   				
+			<interceptor-ref name="json">
+				<param name="enableSMD">true</param>
+			</interceptor-ref>
+			<result name="success" type="json">
+				<param name="excludeNullProperties">true</param>
+			</result>
+			<result name="error" type="json">
+				<param name="excludeNullProperties">true</param>
+			</result>
+
+		</action>
+		
+		<action name="insertSingleCustomer"
+			class="com.highradius.action.CustomersAction" method="insertSingleCustomer">
+   				
+			<interceptor-ref name="json">
+				<param name="enableSMD">true</param>
+			</interceptor-ref>
+			<result name="success" type="json">
+				<param name="excludeNullProperties">true</param>
+			</result>
+			<result name="error" type="json">
+				<param name="excludeNullProperties">true</param>
+			</result>
+
+		</action>
+		
+		<action name="insertMultipleCustomer"
+			class="com.highradius.action.CustomersAction" method="insertMultipleCustomer">
+   				
+			<interceptor-ref name="json">
+				<param name="enableSMD">true</param>
+			</interceptor-ref>
+			<result name="ADDED" type="json">
+				<param name="excludeNullProperties">true</param>
+			</result>
+			<result name="ALREADY_PRESENT" type="json">
+				<param name="excludeNullProperties">true</param>
+			</result>
+
+		</action>
+		
+		<action name="updateCustomer"
+			class="com.highradius.action.CustomersAction" method="updateCustomer">
+   				
+			<interceptor-ref name="json">
+				<param name="enableSMD">true</param>
+			</interceptor-ref>
+			
+			<result name="success" type="json">
+				<param name="excludeNullProperties">true</param>
+			</result>
+			<result name="error" type="json">
+				<param name="excludeNullProperties">true</param>
+			</result>
+
+		</action>
+				
+
+		
+	</package>
+</struts>

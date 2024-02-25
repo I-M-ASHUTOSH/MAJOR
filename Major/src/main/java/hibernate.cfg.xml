@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+    "-//Hibernate/Hibernate Configuration DTD//EN"
+    "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+	<session-factory>
+		<property name="hibernate.connection.driver_class">com.mysql.cj.jdbc.Driver</property>
+		<property name="hibernate.connection.url">jdbc:mysql://localhost:3306/majordatabase</property>
+		<property name="hibernate.connection.username">root</property>
+		<property name="hibernate.connection.password">Ashu@3255</property>
+		<property name="hibernate.show_sql">true</property>
+		<property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+		<property name="hbm2ddl.auto">update</property>
+		<mapping class="com.highradius.pojo.Employees"></mapping>
+		<mapping class="com.highradius.pojo.Customers"></mapping>
+		<mapping class="com.highradius.pojo.Orders"></mapping>
+		<mapping class="com.highradius.pojo.Categories"></mapping>
+		<mapping class="com.highradius.pojo.OrderDetails"></mapping>
+		<mapping class="com.highradius.pojo.Products"></mapping>
+		<mapping class="com.highradius.pojo.Shippers"></mapping>
+		<mapping class="com.highradius.pojo.Suppliers"></mapping> 
+		
+		
+		<!-- <mapping resource="orders.hbm.xml"></mapping>
+		<mapping resource="orderdetails.hbm.xml"></mapping>-->
+	</session-factory>
+</hibernate-configuration>
